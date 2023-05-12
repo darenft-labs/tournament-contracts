@@ -1,4 +1,4 @@
-# Boilerplate for ethereum solidity smart contract development
+This repo contains a script that can be used to deploy Tournament contracts to a blockchain
 
 ## INSTALL
 
@@ -8,60 +8,11 @@ yarn
 
 ## TEST
 
-There are 3 flavors of tests: hardhat, dapptools and forge
-
-### hardhat
-
-- One using hardhat that can leverage hardhat-deploy to reuse deployment procedures and named accounts:
-
-```bash
-yarn test
-```
-
-### [dapptools](https://dapp.tools)
-
-```bash
-dapp test
-```
-
-The latter requires additional step to set up your machine:
-
-Install dapptools (Following instruction [here](https://github.com/dapphub/dapptools#installation)):
-
-```bash
-# user must be in sudoers
-curl -L https://nixos.org/nix/install | sh
-
-# Run this or login again to use Nix
-. "$HOME/.nix-profile/etc/profile.d/nix.sh"
-
-curl https://dapp.tools/install | sh
-```
-
-Then install solc with the correct version:
-
-```bash
-nix-env -f https://github.com/dapphub/dapptools/archive/master.tar.gz -iA solc-static-versions.solc_0_8_9
-```
-
-### forge
-
-```bash
-forge test
-```
-
-This require the installation of forge (see [foundry](https://github.com/gakonst/foundry))
-
 ## SCRIPTS
 
-Here is the list of npm scripts you can execute:
-
-Some of them relies on [./\_scripts.js](./_scripts.js) to allow parameterizing it via command line argument (have a look inside if you need modifications)
-<br/><br/>
 
 ### `yarn prepare`
 
-As a standard lifecycle npm script, it is executed automatically upon install. It generate config file and typechain to get you started with type safe contract interactions
 <br/><br/>
 
 ### `yarn format` and `yarn format:fix`
@@ -145,23 +96,3 @@ This will test the contract against a temporary fork of the specified network.
 This will deploy the contract against a fork of the specified network and it will keep running as a node.
 
 Behind the scene it uses `hardhat node` command so you can append any argument for it
-
-
-
-
-Deploy tournament
-
-
-
-Submiting ...
-
-> get nonce
-> sign data
-> verify
-> approve
-
-
-DEMO:
-
-Tournament deployed to: 0xe232F45Ce5213f974f8192fD2D5Ffb500Fb3C531
-Reward deployed to: 0xc047a9235979e6549a1A0855dD906E9A5Cff8143
